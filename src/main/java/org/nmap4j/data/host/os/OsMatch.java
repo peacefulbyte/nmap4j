@@ -34,6 +34,9 @@
  */
 package org.nmap4j.data.host.os;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OsMatch {
 	
 	public final static String OS_MATCH_TAG = "osmatch" ;
@@ -41,10 +44,15 @@ public class OsMatch {
 	public final static String NAME_ATTR = "name" ;
 	public final static String ACCURACY_ATTR = "accuracy" ;
 	public final static String LINE_ATTR = "line" ;
-	
+
+	public OsMatch() {
+		osClasses = new ArrayList<>();
+	}
+
 	private String name ; 
 	private String accuracy ;
 	private String line ;
+	private List<OsClass> osClasses;
 	
 	public String getName() {
 		return name;
@@ -63,6 +71,18 @@ public class OsMatch {
 	}
 	public void setLine(String line) {
 		this.line = line;
+	}
+	public List<OsClass> getOsClasses() {
+		return osClasses;
+	}
+	public void setOsClasses(List<OsClass> osClasses) {
+		this.osClasses = osClasses;
+	}
+	public boolean addOsClass(OsClass o) {
+		return osClasses.add(o);
+	}
+	public boolean removeOsClass(OsClass o) {
+		return osClasses.remove(o);
 	}
 	@Override
 	public String toString() {

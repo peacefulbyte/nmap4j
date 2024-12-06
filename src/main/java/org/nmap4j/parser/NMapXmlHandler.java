@@ -223,13 +223,13 @@ public class NMapXmlHandler extends DefaultHandler {
 			portUsed = runHandler.createPortUsed( attributes ) ;
 			os.addPortUsed( portUsed ) ;
 		}
-		if( qName.equals( OsClass.OSCLASS_TAG ) ) {
-			osClass = runHandler.createOsClass( attributes ) ;
-			os.addOsClass( osClass ) ;
-		}
 		if( qName.equals( OsMatch.OS_MATCH_TAG ) ) {
 			osMatch = runHandler.createOsMatch( attributes ) ;
 			os.addOsMatch( osMatch ) ;
+		}
+		if( qName.equals( OsClass.OSCLASS_TAG ) ) {
+			osClass = runHandler.createOsClass( attributes ) ;
+			osMatch.addOsClass(osClass);
 		}
 		if( qName.equals( Distance.DISTANCE_TAG ) ) {
 			distance = runHandler.createDistance( attributes ) ;

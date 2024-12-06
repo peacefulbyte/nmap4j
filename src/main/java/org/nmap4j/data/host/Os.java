@@ -47,12 +47,10 @@ public class Os {
 
 	private ArrayList<PortUsed> portUseds ;
 	private ArrayList<OsMatch> osMatches ;
-	private ArrayList<OsClass> osClasses ;
-	
+
 	public Os() {
 		portUseds = new ArrayList<PortUsed>() ;
 		osMatches = new ArrayList<OsMatch>() ;
-		osClasses = new ArrayList<OsClass>() ;
 	}
 	
 	public ArrayList<PortUsed> getPortUseds() {
@@ -78,18 +76,6 @@ public class Os {
 	}
 	public boolean removePortUsed(PortUsed o) {
 		return portUseds.remove(o);
-	}
-	public ArrayList<OsClass> getOsClasses() {
-		return osClasses;
-	}
-	public void setOsClasses(ArrayList<OsClass> osClasses) {
-		this.osClasses = osClasses;
-	}
-	public boolean addOsClass(OsClass o) {
-		return osClasses.add(o);
-	}
-	public boolean removeOsClass(OsClass o) {
-		return osClasses.remove(o);
 	}
 	@Override
 	public String toString() {
